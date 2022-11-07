@@ -3,6 +3,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const userRouter = require("./routes/user.routes");
+const messageRouter = require("./routes/message.routes");
 
 //creating express app
 const app = express();
@@ -15,6 +16,7 @@ const MONGO_URI = "mongodb+srv://admin:admin123@cluster0.mfhcgcz.mongodb.net/?re
 
 //routes
 app.use("/users", userRouter);
+app.use("/messages", messageRouter);
 
 //creating express server
 app.listen(PORT, async () => {
