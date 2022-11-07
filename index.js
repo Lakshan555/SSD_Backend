@@ -2,6 +2,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const userRouter = require("./routes/user.routes");
 
 //creating express app
 const app = express();
@@ -11,6 +12,9 @@ app.use(cors());
 //configuring dotenv variables
 const PORT = process.env.PORT || 5000;
 const MONGO_URI = "mongodb+srv://admin:admin123@cluster0.mfhcgcz.mongodb.net/?retryWrites=true&w=majority";
+
+//routes
+app.use("/users", userRouter);
 
 //creating express server
 app.listen(PORT, async () => {
