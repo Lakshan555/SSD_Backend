@@ -9,6 +9,9 @@ const MessageSchema = new Schema({
     message: {
         type: String,
     },
+    uploadFile: {
+        type: String,        
+    }
 }, {
     timestamps: true,
     collection: "messages",
